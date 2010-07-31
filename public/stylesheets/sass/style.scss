@@ -1,0 +1,37 @@
+body{
+background-color: white;
+}
+
+input{
+  width: 100px;
+  height: 40px;
+}
+
+#guessField{
+  width: 310px;
+  font-size: 1.5em;
+}
+
+#op1{
+margin-left: 25px;
+font-size: 1.5em;
+}
+
+#op2{
+margin-left: 25px;
+border-bottom: solid 1px black;
+width: 30px;
+font-size: 1.5em;
+}
+
+
+#operator{
+position: relative;
+bottom: 40px;
+left: 10px;
+}
+
+#statistics{
+margin-top: 50px;
+font-size: 0.8em;
+}

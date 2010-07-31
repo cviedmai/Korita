@@ -1,0 +1,56 @@
+="Hola #{@student.name}"
+%hr
+#op1
+  10
+#op2
+  30
+#operator
+  x
+#result
+  %input{:type => "text", :value => "", :id => "guessField"}
+
+#numbers
+  %table
+    %tr
+      %td
+        %input{:type => "button", :value => "7", :class => "number"}
+      %td
+        %input{:type => "button", :value => "8", :class => "number"}
+      %td
+        %input{:type => "button", :value => "9", :class => "number"}
+    %tr
+      %td
+        %input{:type => "button", :value => "4", :class => "number"}
+      %td
+        %input{:type => "button", :value => "5", :class => "number"}
+      %td
+        %input{:type => "button", :value => "6", :class => "number"}
+    %tr
+      %td
+        %input{:type => "button", :value => "1", :class => "number"}
+      %td
+        %input{:type => "button", :value => "2", :class => "number"}
+      %td
+        %input{:type => "button", :value => "3", :class => "number"}
+    %tr
+      %td
+        &nbsp;
+      %td
+        %input{:type => "button", :value => "0", :class => "number"}
+      %td
+        &nbsp;
+    %tr
+      %td
+        %input{:type => "button", :value => "Clear", :id => "clear"}
+      %td
+        &nbsp;
+      %td
+        %input{:type => "button", :value => "New", :id => "new"}
+#statistics
+  Right answers:
+  %span#rightAnswers
+    0
+  %br
+  Wrong answers:
+  %span#wrongAnswers
+    0
