@@ -1,37 +1,48 @@
 body{
-background-color: white;
+  background-color: white;
 }
 
-input{
+#numbers{
+  width: 100%;
+  td{
+    padding: 10px;
+    margin: 0px;
+  }
+  input.number{
+    width: 100%;
+    font-size: 1.5em;
+  }
+}
+
+
+#operation{
+  position: relative;
+  font-size: 3em;
+  text-align: right;
   width: 100px;
-  height: 40px;
-}
+  margin-left: auto;
+  margin-right: auto;
 
-#guessField{
-  width: 310px;
-  font-size: 1.5em;
-}
+  #op1{
+  }
 
-#op1{
-margin-left: 25px;
-font-size: 1.5em;
-}
+  #op2{
+    border-bottom: solid 1px black;
+  }
 
-#op2{
-margin-left: 25px;
-border-bottom: solid 1px black;
-width: 30px;
-font-size: 1.5em;
-}
+  #operator{
+    position: absolute;
+    bottom: 75px;
+    left: 10px;
+  }
 
+  #result{
+    height: 50px;
+  }
 
-#operator{
-position: relative;
-bottom: 40px;
-left: 10px;
 }
 
 #statistics{
-margin-top: 50px;
-font-size: 0.8em;
+  font-size: 0.8em;
+  display: inline;
 }

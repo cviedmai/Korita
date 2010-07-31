@@ -26,24 +26,23 @@ function populateOperators(){
 
 function checkGuess(){
   // Checks if the input number is correct
-  var valueGuess = $("guessField").value;
+  var valueGuess = $("result").innerHTML;
   var lengthResult = (""+valueResult).length;
   var lengthGuess = valueGuess.length;
 
   if (lengthResult == lengthGuess){
     if (valueGuess == valueResult){
       //Right answer      
-      //Effect.Pulsate('guessField', {duration: 0.5});
-      new Effect.Highlight('guessField', {startcolor: "#00FF00"});
-      setTimeout("populateOperators();", 500);
+      new Effect.Highlight('operation', {startcolor: "#00FF00"});
+      setTimeout("populateOperators();", 800);
       statistics.right += 1;
       updateStatistics();
     }
     else {
       //Wrong answer
       Effect.Shake('numbers', {duration: 0.2});
-      new Effect.Highlight('guessField', {startcolor: "#FF0000"});
-      setTimeout("clearField();", 500);
+      new Effect.Highlight('operation', {startcolor: "#FF0000"});
+      setTimeout("clearField();", 800);
       statistics.wrong += 1;
       updateStatistics();
     }
@@ -57,19 +56,20 @@ function updateStatistics(){
 
 
 function clearField(){
-  $("guessField").value = "";
+  $("result").innerHTML = "";
+}
+
+function clickNumber(){
+  // Called when a button number is clicked
+  $("result").innerHTML += this.value;
+  checkGuess();
 }
 
 Event.observe(window, 'load', function() {
   populateOperators();
   
   //Observers for the numbers
-  $$(".number").each(function(num){
-    num.observe('click', function(event) {
-      $("guessField").value += this.value;
-      checkGuess();
-    });
-  });
+  $$(".number").each(function(num){num.observe('click', clickNumber);});
 
   Event.observe($("clear"), 'click', clearField);
   Event.observe($("new"), 'click', populateOperators);
