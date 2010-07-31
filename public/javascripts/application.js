@@ -1,3 +1,11 @@
+/*
+*   Korita v0.1
+*   Author: Cristobal Viedma, cristobal@viedma.es
+*   Copyright (c) 2010 Cristobal Viedma
+*   Licensed under the MIT license:
+*   http://www.opensource.org/licenses/mit-license.php
+*/
+
 var valueResult;
 var statistics = {right: 0, wrong:0};
 
