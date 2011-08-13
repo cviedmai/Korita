@@ -1,0 +1,40 @@
+body {
+background-color: white; }
+
+#buttons {
+  width: 100%; }
+
+  #buttons td {
+    width: 33%;
+    padding: 5px;
+    margin: 0px; }
+  #buttons input.button {
+    width: 100%;
+    height: 50px;
+    font-size: 1.5em; }
+
+#operation {
+  position: relative;
+  font-size: 3em;
+  text-align: right;
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto; }
+  #operation #op2 {
+    border-bottom: solid 1px black; }
+  #operation #operator {
+    position: absolute;
+    bottom: 75px;
+    left: 10px; }
+  #operation #result {
+    height: 50px; }
+  #operation.right {
+    background-color: #44AA44;
+  }
+  #operation.wrong {
+    background-color: #AA4444;
+  }
+
+#statistics {
+  font-size: 0.8em;
+  display: inline; }
