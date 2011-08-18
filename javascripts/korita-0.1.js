@@ -7,7 +7,15 @@
 */
 
 var valueResult;
+var lengthResult;
 var statistics = {right: 0, wrong:0};
+var resultElem;
+var op1Elem;
+var op2Elem;
+var operatorElem;
+var operationElem;
+var rightElem;
+var wrongElem;
 
 function generateNumber(range){
   var n = Math.floor(Math.random()*range);
@@ -18,34 +26,34 @@ function generateNumber(range){
 }
 
 function populateOperators(){
-  $("#operation").removeClass("right");
+  operationElem.removeClass("right");
   var op1 = generateNumber(100);
   var op2 = generateNumber(10);
 
-  $("#op1").text(op1);
-  $("#op2").text(op2);
-  $("#operator").text("x");
+  op1Elem.text(op1);
+  op2Elem.text(op2);
+  operatorElem.text("x");
   valueResult = op1*op2;
+  lengthResult = (""+valueResult).length;
   clearField();
 }
 
 function checkGuess(){
   // Checks if the input button is correct
-  var valueGuess = $("#result").text();
-  var lengthResult = (""+valueResult).length;
+  var valueGuess = resultElem.text();
   var lengthGuess = valueGuess.length;
 
   if (lengthResult == lengthGuess){
     if (valueGuess == valueResult){
       //Right answer      
-      $("#operation").addClass("right");
+      operationElem.addClass("right");
       setTimeout("populateOperators();", 800);
       statistics.right += 1;
       updateStatistics();
     }
     else {
       //Wrong answer
-      $("#operation").addClass("wrong");
+      operationElem.addClass("wrong");
       setTimeout("clearField();", 800);
       statistics.wrong += 1;
       updateStatistics();
@@ -54,23 +62,32 @@ function checkGuess(){
 }
 
 function updateStatistics(){
-  $("#rightAnswers").text(statistics.right);
-  $("#wrongAnswers").text(statistics.wrong);
+  rightElem.text(statistics.right);
+  wrongElem.text(statistics.wrong);
 }
 
 
 function clearField(){
-  $("#operation").removeClass("wrong");
-  $("#result").text("");
+  operationElem.removeClass("wrong");
+  resultElem.text("");
 }
 
 function clickNumber(){
   // Called when a button button is clicked
-  $("#result").text($("#result").text() + this.value);
+  resultElem.text(resultElem.text() + this.value);
   checkGuess();
 }
 
 $(window).ready(function() {
+  
+  resultElem = $("#result");
+  op1Elem = $("#op1");
+  op2Elem = $("#op2");
+  operatorElem = $("#operator");
+  operationElem = $("#operation");
+  rightElem = $("#rightAnswers");
+  wrongElem = $("#wrongAnswers");
+
   populateOperators();
   
   //Observers for the buttons
